@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "6ae70a1be514ed11a7ac3b08",
+    "name": "System Administrator",
+    "employeeId": "EMP000",
+    "email": "admin@visitor.local",
+    "mobile": "+91 9999999990",
+    "department": "Administration",
+    "designation": "Principal Admin",
+    "passwordHash": "$2b$10$OBPdx./nUEipFH0hGNYIuOVrXo0OY601sVCwPwPV1ewBXyV1./IMu",
+    "role": "admin",
+    "isActive": true,
+    "createdAt": "2026-11-01T09:44:59.484Z",
+    "updatedAt": "2026-11-01T15:36:58.016Z",
+    "__v": 0,
+    "lastLoginAt": "2026-11-01T15:36:58.008Z"
+  },
+  {
+    "_id": "6ae70b378c7f5c9afc485f9e",
+    "name": "Jariwala Nidhi DharmeshKumar",
+    "employeeId": "EMP001",
+    "email": "jariwalanidhi28@gmail.com",
+    "mobile": "+919316430740",
+    "department": "IT",
+    "designation": "Developer",
+    "passwordHash": "$2b$10$RRBJ5xToR6al/NIXJr0WBOjGTsHEliPtsANhXWRKOC8aKfIizBB0q",
+    "role": "user",
+    "isActive": true,
+    "createdAt": "2026-11-01T09:49:43.202Z",
+    "updatedAt": "2026-11-01T15:37:32.001Z",
+    "__v": 0,
+    "lastLoginAt": "2026-11-01T15:37:32.000Z"
+  }
+]

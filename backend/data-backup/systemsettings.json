@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "6ae615f5d0fb6402fd060a30",
+    "key": "default_settings",
+    "trackingProvider": "hypertrack",
+    "hypertrack": {
+      "publishableKey": "test_pk_12345",
+      "secretKey": "test_sk_secret_value",
+      "accountId": "test_acc_999",
+      "isEnabled": true
+    },
+    "geocoding": {
+      "apiKey": "",
+      "provider": "google",
+      "isEnabled": false
+    },
+    "createdAt": "2026-10-31T16:23:17.194Z",
+    "updatedAt": "2026-11-01T09:50:49.406Z",
+    "__v": 0,
+    "updatedBy": "6ae70a1be514ed11a7ac3b08"
+  }
+]

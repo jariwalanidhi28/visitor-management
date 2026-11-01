@@ -1,0 +1,14 @@
+{
+  "name": "visitor-management-system",
+  "version": "1.0.0",
+  "description": "Complete Visitor & Employee Check-In & Check-Out Management System",
+  "scripts": {
+    "build": "npm --prefix backend install && npm --prefix admin-web install && npm --prefix admin-web run build",
+    "start": "node backend/server.js",
+    "backend": "cd backend && npm run dev",
+    "mobile": "cd mobile && npm start",
+    "admin": "cd admin-web && npm run dev",
+    "seed": "cd backend && node src/scripts/seed.js",
+    "test:backend": "node backend/tests/integration.js"
+  }
+}

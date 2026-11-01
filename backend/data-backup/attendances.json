@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "6ae70bf58c7f5c9afc485fa3",
+    "userId": "6ae70b378c7f5c9afc485f9e",
+    "destinationId": null,
+    "customDestination": "Udhana, Udhna Taluka, Surat, Gujarat, 394220, India",
+    "purpose": "Work Check-In",
+    "remarks": "",
+    "status": "checked_out",
+    "checkIn": {
+      "timestamp": "2026-11-01T09:52:53.243Z",
+      "photoUrl": "attend-1793526760730-757027244.jpg",
+      "latitude": 21.1597984,
+      "longitude": 72.8317923,
+      "accuracy": 100,
+      "address": "Udhana, Udhna Taluka, Surat, Gujarat, 394220, India"
+    },
+    "checkOut": {
+      "timestamp": "2026-11-01T13:23:21.718Z",
+      "photoUrl": "attend-1793539401716-957219301.jpg",
+      "latitude": 21.1602728,
+      "longitude": 72.8327398,
+      "accuracy": 49,
+      "address": "Udhana, Udhna Taluka, Surat, Gujarat, 394220, India"
+    },
+    "durationMinutes": 210,
+    "trackingProvider": "hypertrack",
+    "trackingMetadata": {
+      "geocodingEngine": "nominatim",
+      "placeId": "247650734",
+      "verifiedAt": "2026-11-01T09:52:40.857Z",
+      "provider": "hypertrack",
+      "status": "completed",
+      "deviceId": "HT-EMP-EMP001",
+      "tripId": "trip_ht_1793526773243_EMP001",
+      "trackingUrl": "https://app.hypertrack.com/devices/HT-EMP-EMP001",
+      "recordedAt": "2026-11-01T09:52:53.243Z",
+      "checkoutPlaceId": "253777019",
+      "checkoutGeocodingEngine": "nominatim",
+      "checkoutVerifiedAt": "2026-11-01T13:23:21.718Z",
+      "tripCompletedAt": "2026-11-01T13:23:23.350Z"
+    },
+    "createdAt": "2026-11-01T09:52:53.248Z",
+    "updatedAt": "2026-11-01T13:23:23.359Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75be9f954a6c9ca3f1e03",
+    "userId": "6ae70b378c7f5c9afc485f9e",
+    "destinationId": null,
+    "customDestination": "Udhana, Udhna Taluka, Surat, Gujarat, 394220, India",
+    "purpose": "Work Check-In",
+    "remarks": "",
+    "status": "checked_in",
+    "checkIn": {
+      "timestamp": "2026-11-01T15:34:01.495Z",
+      "photoUrl": "attend-1793547239716-741781936.jpg",
+      "latitude": 21.1602738,
+      "longitude": 72.8327394,
+      "accuracy": 100,
+      "address": "Udhana, Udhna Taluka, Surat, Gujarat, 394220, India"
+    },
+    "checkOut": null,
+    "durationMinutes": null,
+    "trackingProvider": "hypertrack",
+    "trackingMetadata": {
+      "geocodingEngine": "nominatim",
+      "placeId": "250157311",
+      "verifiedAt": "2026-11-01T15:34:00.158Z",
+      "provider": "hypertrack",
+      "status": "active_tracking",
+      "deviceId": "HT-EMP-EMP001",
+      "tripId": "trip_ht_1793547241495_EMP001",
+      "trackingUrl": "https://app.hypertrack.com/devices/HT-EMP-EMP001",
+      "recordedAt": "2026-11-01T15:34:01.495Z"
+    },
+    "createdAt": "2026-11-01T15:34:01.497Z",
+    "updatedAt": "2026-11-01T15:34:01.497Z",
+    "__v": 0
+  }
+]

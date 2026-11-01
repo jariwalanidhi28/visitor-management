@@ -1,0 +1,873 @@
+[
+  {
+    "_id": "6ae6103ce323e8c4cd5474af",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:58:52.203Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61041e323e8c4cd5474b0",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:58:57.154Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61065dc83e58856685734",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:59:33.336Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61065dc83e58856685735",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:59:33.435Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61065dc83e58856685737",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae61065dc83e58856685736",
+    "details": {
+      "createdEmployeeId": "EMP3538",
+      "createdEmail": "test_1793462373538@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:59:33.639Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61065dc83e58856685739",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61065dc83e58856685738",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:59:33.704Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61065dc83e5885668573a",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61065dc83e58856685738",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T15:59:33.768Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61327dc83e5885668573b",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:11:19.587Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61327dc83e5885668573c",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:11:19.688Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61327dc83e5885668573e",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae61327dc83e5885668573d",
+    "details": {
+      "createdEmployeeId": "EMP9791",
+      "createdEmail": "test_1793463079791@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:11:19.895Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61327dc83e58856685740",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61327dc83e5885668573f",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:11:19.930Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61327dc83e58856685741",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61327dc83e5885668573f",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:11:19.975Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae613debc1b6d2a0f828121",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:14:22.452Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6140fbc1b6d2a0f828122",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-10-31T16:15:11.590Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae615f5d0fb6402fd060a2f",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:23:17.174Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae615fdd0fb6402fd060a31",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:23:25.291Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae615fdd0fb6402fd060a32",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_UPDATE_TRACKING_SETTINGS",
+    "entityType": "SystemSettings",
+    "entityId": "6ae615f5d0fb6402fd060a30",
+    "details": {
+      "activeTrackingProvider": "hypertrack"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:23:25.312Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61606d0fb6402fd060a33",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:23:34.975Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae616b5d0fb6402fd060a34",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:26:29.524Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae616b5d0fb6402fd060a35",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:26:29.624Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae616b5d0fb6402fd060a37",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae616b5d0fb6402fd060a36",
+    "details": {
+      "createdEmployeeId": "EMP9717",
+      "createdEmail": "test_1793463989717@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:26:29.820Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae616c2d0fb6402fd060a39",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae616c2d0fb6402fd060a38",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "trackingProvider": "hypertrack",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:26:42.155Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae616c2d0fb6402fd060a3a",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae616c2d0fb6402fd060a38",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:26:42.608Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6180cd0fb6402fd060a3b",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_UPDATE_TRACKING_SETTINGS",
+    "entityType": "SystemSettings",
+    "entityId": "6ae615f5d0fb6402fd060a30",
+    "details": {
+      "activeTrackingProvider": "hypertrack"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:32:12.893Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6197f0d83cdae7153350a",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:38:23.878Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6197f0d83cdae7153350b",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:38:23.994Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae619800d83cdae7153350d",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae619800d83cdae7153350c",
+    "details": {
+      "createdEmployeeId": "EMP4099",
+      "createdEmail": "test_1793464704099@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:38:24.192Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6198c0d83cdae7153350f",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae6198c0d83cdae7153350e",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "trackingProvider": "hypertrack",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:38:36.559Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae6198d0d83cdae71533510",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae6198c0d83cdae7153350e",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:38:37.023Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61b610df69eda3b91e070",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:46:25.389Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61b610df69eda3b91e071",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:46:25.485Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61b610df69eda3b91e073",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae61b610df69eda3b91e072",
+    "details": {
+      "createdEmployeeId": "EMP5580",
+      "createdEmail": "test_1793465185580@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:46:25.682Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61b6e0df69eda3b91e075",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61b6e0df69eda3b91e074",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "trackingProvider": "hypertrack",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:46:38.072Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61b6e0df69eda3b91e076",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61b6e0df69eda3b91e074",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:46:38.552Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61bec559bbe82044f62c5",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61bec559bbe82044f62c4",
+    "details": {
+      "destinationId": null,
+      "trackingProvider": "hypertrack",
+      "latitude": 21.1602734,
+      "longitude": 72.8327371
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-10-31T16:48:44.339Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61df0899fd0076772ce68",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:57:20.248Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61df0899fd0076772ce69",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:57:20.348Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61df0899fd0076772ce6b",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae61df0899fd0076772ce6a",
+    "details": {
+      "createdEmployeeId": "EMP0451",
+      "createdEmail": "test_1793465840451@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:57:20.560Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61dfd899fd0076772ce6c",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61bec559bbe82044f62c4",
+    "details": {
+      "durationMinutes": 9,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:57:33.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61e1fc17d570190533c8d",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a87",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:58:07.563Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61e1fc17d570190533c8e",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae6102dd7787f51926a2a8b",
+    "details": {
+      "role": "user",
+      "email": "john@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:58:07.674Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61e1fc17d570190533c90",
+    "actorId": "6ae6102dd7787f51926a2a87",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae61e1fc17d570190533c8f",
+    "details": {
+      "createdEmployeeId": "EMP7783",
+      "createdEmail": "test_1793465887783@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:58:07.882Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61e2cc17d570190533c92",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61e2cc17d570190533c91",
+    "details": {
+      "destinationId": "6ae6102dd7787f51926a2a89",
+      "trackingProvider": "hypertrack",
+      "latitude": "12.9716",
+      "longitude": "77.5946"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:58:20.979Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61e2dc17d570190533c93",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61e2cc17d570190533c91",
+    "details": {
+      "durationMinutes": 1,
+      "latitude": "12.9720",
+      "longitude": "77.5950"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-10-31T16:58:21.558Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae61ea5c17d570190533c95",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae61ea5c17d570190533c94",
+    "details": {
+      "destinationId": null,
+      "trackingProvider": "hypertrack",
+      "latitude": 21.1602734,
+      "longitude": 72.8327371
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-10-31T17:00:21.850Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae7067abbf3c76c2c317252",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae61ea5c17d570190533c94",
+    "details": {
+      "durationMinutes": 989,
+      "latitude": 21.1603399,
+      "longitude": 72.8326833
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-11-01T09:29:30.518Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae7078abbf3c76c2c317254",
+    "actorId": "6ae6102dd7787f51926a2a8b",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae7078abbf3c76c2c317253",
+    "details": {
+      "destinationId": null,
+      "trackingProvider": "hypertrack",
+      "latitude": 21.1597984,
+      "longitude": 72.8317923
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-11-01T09:34:02.157Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70af38c7f5c9afc485f9d",
+    "actorId": "6ae70a1be514ed11a7ac3b08",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70a1be514ed11a7ac3b08",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-11-01T09:48:35.689Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70b378c7f5c9afc485f9f",
+    "actorId": "6ae70a1be514ed11a7ac3b08",
+    "action": "ADMIN_CREATE_USER",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "details": {
+      "createdEmployeeId": "EMP001",
+      "createdEmail": "jariwalanidhi28@gmail.com"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-11-01T09:49:43.208Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70b698c7f5c9afc485fa0",
+    "actorId": "6ae70a1be514ed11a7ac3b08",
+    "action": "ADMIN_UPDATE_TRACKING_SETTINGS",
+    "entityType": "SystemSettings",
+    "entityId": "6ae615f5d0fb6402fd060a30",
+    "details": {
+      "activeTrackingProvider": "native_geocoding"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-11-01T09:50:33.100Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70b798c7f5c9afc485fa1",
+    "actorId": "6ae70a1be514ed11a7ac3b08",
+    "action": "ADMIN_UPDATE_TRACKING_SETTINGS",
+    "entityType": "SystemSettings",
+    "entityId": "6ae615f5d0fb6402fd060a30",
+    "details": {
+      "activeTrackingProvider": "hypertrack"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-11-01T09:50:49.409Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70bc28c7f5c9afc485fa2",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "details": {
+      "role": "user",
+      "email": "jariwalanidhi28@gmail.com"
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-11-01T09:52:02.809Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae70bf58c7f5c9afc485fa4",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae70bf58c7f5c9afc485fa3",
+    "details": {
+      "destinationId": null,
+      "trackingProvider": "hypertrack",
+      "latitude": 21.1597984,
+      "longitude": 72.8317923
+    },
+    "ipAddress": "192.168.10.10",
+    "timestamp": "2026-11-01T09:52:53.253Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae73bae8c7f5c9afc485fa5",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "details": {
+      "role": "user",
+      "email": "jariwalanidhi28@gmail.com"
+    },
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T13:16:30.930Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae73d4b8c7f5c9afc485fa6",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_CHECK_OUT",
+    "entityType": "Attendance",
+    "entityId": "6ae70bf58c7f5c9afc485fa3",
+    "details": {
+      "durationMinutes": 210,
+      "latitude": 21.1602728,
+      "longitude": 72.8327398
+    },
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T13:23:23.365Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75bcbf954a6c9ca3f1e02",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "details": {
+      "role": "user",
+      "email": "jariwalanidhi28@gmail.com"
+    },
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T15:33:31.644Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75be9f954a6c9ca3f1e04",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_CHECK_IN",
+    "entityType": "Attendance",
+    "entityId": "6ae75be9f954a6c9ca3f1e03",
+    "details": {
+      "destinationId": null,
+      "trackingProvider": "hypertrack",
+      "latitude": 21.1602738,
+      "longitude": 72.8327394
+    },
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T15:34:01.499Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75c13f954a6c9ca3f1e05",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGOUT",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T15:34:43.996Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75c9ad0b26727370602c1",
+    "actorId": "6ae70a1be514ed11a7ac3b08",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70a1be514ed11a7ac3b08",
+    "details": {
+      "role": "admin",
+      "email": "admin@visitor.local"
+    },
+    "ipAddress": "127.0.0.1",
+    "timestamp": "2026-11-01T15:36:58.030Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75cbcd0b26727370602c2",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGIN",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "details": {
+      "role": "user",
+      "email": "jariwalanidhi28@gmail.com"
+    },
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T15:37:32.004Z",
+    "__v": 0
+  },
+  {
+    "_id": "6ae75d05d46d77f692c66016",
+    "actorId": "6ae70b378c7f5c9afc485f9e",
+    "action": "USER_LOGOUT",
+    "entityType": "User",
+    "entityId": "6ae70b378c7f5c9afc485f9e",
+    "ipAddress": "10.79.110.13",
+    "timestamp": "2026-11-01T15:38:45.335Z",
+    "__v": 0
+  }
+]
