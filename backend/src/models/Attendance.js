@@ -10,6 +10,10 @@ const attendanceEventSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    photoBase64: {
+      type: String,
+      default: null,
+    },
     latitude: {
       type: Number,
       required: true,

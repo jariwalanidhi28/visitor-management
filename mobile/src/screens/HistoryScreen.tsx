@@ -7,6 +7,8 @@ import {
   FlatList,
   RefreshControl,
   ActivityIndicator,
+  Image,
+  Modal,
 } from "react-native";
 import { useAuth } from "../context/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
@@ -22,6 +24,7 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({ onBack }) => {
   const [refreshing, setRefreshing] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [selectedPhoto, setSelectedPhoto] = useState<{ url: string; title: string } | null>(null);
 
   const fetchHistory = async (pageNum = 1) => {
     try {
@@ -111,20 +114,40 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({ onBack }) => {
         <View style={styles.eventRow}>
           <View style={styles.eventBlock}>
             <View style={styles.eventTitleRow}>
-              <Ionicons name="log-in-outline" size={14} color="#2563EB" />
+              <Ionicons name="log-in-outline" size={14" color="#2563EB" />
               <Text style={styles.eventTitle}>Check-In</Text>
             </View>
-            <Text style={styles.timeText}>
-              {cin?.timestamp ? new Date(cin.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "N/A"}
-            </Text>
-            <Text style={styles.dateText}>
-              {cin?.timestamp ? new Date(cin.timestamp).toLocaleDateString() : ""}
-            </Text>
-            {cin?.latitude && (
-              <Text style={styles.coordsText}>
-                {cin.latitude.toFixed(4)}, {cin.longitude.toFixed(4)}
-              </Text>
-            )}
+            <View style={styles.eventDetailsRow}>
+              {cin?.photoUrl && (
+                <TouchableOpacity
+                  onPress={() =>
+                    setSelectedPhoto({
+                      url: `${apiUrl}/photos/${cin.photoUrl}`,
+                      title: "Check-In Selfie",
+                    })
+                  }
+                  style={styles.thumbWrapper}
+                >
+                  <Image
+                    source={{ uri: `${apiUrl}/photos/${cin.photoUrl}` }}
+                    style={styles.thumbnail}
+                  />
+                </TouchableOpacity>
+              )}
+              <View style={{ flex: 1 }}>
+                <Text style={styles.timeText}>
+                  {cin?.timestamp ? new Date(cin.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "N/A"}
+                </Text>
+                <Text style={styles.dateText}>
+                  {cin?.timestamp ? new Date(cin.timestamp).toLocaleDateString() : ""}
+                </Text>
+                {cin?.latitude && (
+                  <Text style={styles.coordsText}>
+                    {cin.latitude.toFixed(4)}, {cin.longitude.toFixed(4)}
+                  </Text>
+                )}
+              </View>
+            </View>
           </View>
 
           <View style={styles.eventDivider} />
@@ -134,17 +157,37 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({ onBack }) => {
               <Ionicons name="log-out-outline" size={14} color="#059669" />
               <Text style={styles.eventTitle}>Check-Out</Text>
             </View>
-            <Text style={styles.timeText}>
-              {cout?.timestamp ? new Date(cout.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "—"}
-            </Text>
-            <Text style={styles.dateText}>
-              {cout?.timestamp ? new Date(cout.timestamp).toLocaleDateString() : "In progress"}
-            </Text>
-            {cout?.latitude && (
-              <Text style={styles.coordsText}>
-                {cout.latitude.toFixed(4)}, {cout.longitude.toFixed(4)}
-              </Text>
-            )}
+            <View style={styles.eventDetailsRow}>
+              {cout?.photoUrl && (
+                <TouchableOpacity
+                  onPress={() =>
+                    setSelectedPhoto({
+                      url: `${apiUrl}/photos/${cout.photoUrl}`,
+                      title: "Check-Out Selfie",
+                    })
+                  }
+                  style={styles.thumbWrapper}
+                >
+                  <Image
+                    source={{ uri: `${apiUrl}/photos/${cout.photoUrl}` }}
+                    style={styles.thumbnail}
+                  />
+                </TouchableOpacity>
+              )}
+              <View style={{ flex: 1 }}>
+                <Text style={styles.timeText}>
+                  {cout?.timestamp ? new Date(cout.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "—"}
+                </Text>
+                <Text style={styles.dateText}>
+                  {cout?.timestamp ? new Date(cout.timestamp).toLocaleDateString() : "In progress"}
+                </Text>
+                {cout?.latitude && (
+                  <Text style={styles.coordsText}>
+                    {cout.latitude.toFixed(4)}, {cout.longitude.toFixed(4)}
+                  </Text>
+                )}
+              </View>
+            </View>
           </View>
         </View>
 
@@ -196,6 +239,35 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({ onBack }) => {
           </Text>
         </View>
       )}
+      {/* Full Screen Photo Lightbox Modal */}
+      <Modal
+        visible={Boolean(selectedPhoto)}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSelectedPhoto(null)}
+      >
+        <TouchableOpacity
+          style={styles.modalOverlay}
+          activeOpacity={1}
+          onPress={() => setSelectedPhoto(null)}
+        >
+          <View style={styles.modalContent} onStartShouldSetResponder={() => true}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>{selectedPhoto?.title}</Text>
+              <TouchableOpacity onPress={() => setSelectedPhoto(null)} style={styles.closeBtn}>
+                <Ionicons name="close" size={24} color="#FFFFFF" />
+              </TouchableOpacity>
+            </View>
+            {selectedPhoto?.url && (
+              <Image
+                source={{ uri: selectedPhoto.url }}
+                style={styles.fullImage}
+                resizeMode="contain"
+              />
+            )}
+          </View>
+        </TouchableOpacity>
+      </Modal>
     </View>
   );
 };
@@ -344,6 +416,60 @@ const styles = StyleSheet.create({
     fontFamily: "monospace",
     color: "#94A3B8",
     marginTop: 2,
+  },
+  eventDetailsRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginTop: 4,
+  },
+  thumbWrapper: {
+    width: 36,
+    height: 36,
+    borderRadius: 8,
+    overflow: "hidden",
+    borderWidth: 1.5,
+    borderColor: "#E2E8F0",
+    backgroundColor: "#F1F5F9",
+  },
+  thumbnail: {
+    width: "100%",
+    height: "100%",
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(15, 23, 42, 0.85)",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+  modalContent: {
+    width: "100%",
+    maxHeight: "80%",
+    backgroundColor: "#0F172A",
+    borderRadius: 16,
+    overflow: "hidden",
+  },
+  modalHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#1E293B",
+  },
+  modalTitle: {
+    fontSize: 14,
+    fontWeight: "700",
+    color: "#F8FAFC",
+  },
+  closeBtn: {
+    padding: 4,
+  },
+  fullImage: {
+    width: "100%",
+    height: 360,
   },
   durationFooter: {
     flexDirection: "row",

@@ -134,6 +134,7 @@ exports.checkIn = async (req, res, next) => {
       checkIn: {
         timestamp: new Date(),
         photoUrl: photoFilename,
+        photoBase64: req.body.photoBase64 || null,
         latitude: parseFloat(latitude),
         longitude: parseFloat(longitude),
         accuracy: accuracy ? parseFloat(accuracy) : null,
@@ -255,6 +256,7 @@ exports.checkOut = async (req, res, next) => {
     activeAttendance.checkOut = {
       timestamp: checkOutTimestamp,
       photoUrl: photoFilename,
+      photoBase64: req.body.photoBase64 || null,
       latitude: parseFloat(latitude),
       longitude: parseFloat(longitude),
       accuracy: accuracy ? parseFloat(accuracy) : null,

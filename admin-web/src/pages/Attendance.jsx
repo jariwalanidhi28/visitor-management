@@ -76,7 +76,7 @@ export default function Attendance() {
   const [endDate, setEndDate] = useState("");
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState({ total: 0, totalPages: 1 });
-  const [selectedRecordId, setSelectedRecordId] = useState(null);
+  const [previewPhoto, setPreviewPhoto] = useState(null);
 
   const fetchRecords = async () => {
     try {
@@ -286,29 +286,24 @@ export default function Attendance() {
                             <PhotoThumbnail
                               photoUrl={cin.photoUrl}
                               label="Check-In"
-                              onOpenModal={() => setSelectedRecordId(r._id)}
+                              onOpenModal={() =>
+                                setPreviewPhoto({
+                                  url: cin.photoUrl,
+                                  title: `Check-In Photo - ${r.userId?.name || "Employee"}`,
+                                  time: cin.timestamp ? new Date(cin.timestamp).toLocaleString() : "",
+                                })
+                              }
                             />
                           )}
                           <div>
-                            <div className="flex items-center gap-1.5">
-                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500 text-white shadow-sm">
-                                {cin?.timestamp
-                                  ? new Date(cin.timestamp).toLocaleTimeString([], {
-                                      hour: "2-digit",
-                                      minute: "2-digit",
-                                    })
-                                  : "N/A"}
-                              </span>
-                              {cin?.latitude && (
-                                <button
-                                  onClick={() => setSelectedRecordId(r._id)}
-                                  title="View Location on Map"
-                                  className="p-1.5 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm"
-                                >
-                                  <MapPin className="w-3.5 h-3.5" />
-                                </button>
-                              )}
-                            </div>
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500 text-white shadow-sm">
+                              {cin?.timestamp
+                                ? new Date(cin.timestamp).toLocaleTimeString([], {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                  })
+                                : "N/A"}
+                            </span>
                             <div className="text-[11px] text-slate-400 font-medium mt-1">
                               {cin?.timestamp ? new Date(cin.timestamp).toLocaleDateString() : ""}
                             </div>
@@ -333,27 +328,22 @@ export default function Attendance() {
                               <PhotoThumbnail
                                 photoUrl={cout.photoUrl}
                                 label="Check-Out"
-                                onOpenModal={() => setSelectedRecordId(r._id)}
+                                onOpenModal={() =>
+                                  setPreviewPhoto({
+                                    url: cout.photoUrl,
+                                    title: `Check-Out Photo - ${r.userId?.name || "Employee"}`,
+                                    time: cout.timestamp ? new Date(cout.timestamp).toLocaleString() : "",
+                                  })
+                                }
                               />
                             )}
                             <div>
-                              <div className="flex items-center gap-1.5">
-                                <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm">
-                                  {new Date(cout.timestamp).toLocaleTimeString([], {
-                                    hour: "2-digit",
-                                    minute: "2-digit",
-                                  })}
-                                </span>
-                                {cout?.latitude && (
-                                  <button
-                                    onClick={() => setSelectedRecordId(r._id)}
-                                    title="View Location on Map"
-                                    className="p-1.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm"
-                                  >
-                                    <MapPin className="w-3.5 h-3.5" />
-                                  </button>
-                                )}
-                              </div>
+                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm">
+                                {new Date(cout.timestamp).toLocaleTimeString([], {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                })}
+                              </span>
                               <div className="text-[11px] text-slate-400 font-medium mt-1">
                                 {new Date(cout.timestamp).toLocaleDateString()}
                               </div>
@@ -437,12 +427,38 @@ export default function Attendance() {
         </div>
       </div>
 
-      {/* Modal View */}
-      {selectedRecordId && (
-        <AttendanceDetailModal
-          recordId={selectedRecordId}
-          onClose={() => setSelectedRecordId(null)}
-        />
+      {/* Lightbox Photo Preview Modal (Pure Photo View) */}
+      {previewPhoto && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in"
+          onClick={() => setPreviewPhoto(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-slate-50">
+              <div>
+                <h3 className="font-bold text-slate-800 text-sm">{previewPhoto.title}</h3>
+                <p className="text-[11px] text-slate-400 font-mono mt-0.5">{previewPhoto.time}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setPreviewPhoto(null)}
+                className="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="p-3 bg-slate-950 flex items-center justify-center min-h-[350px]">
+              <img
+                src={`${API_BASE_URL}/photos/${previewPhoto.url}`}
+                alt="Verification Selfie"
+                className="max-h-[70vh] w-auto max-w-full rounded-lg object-contain shadow-md"
+              />
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
