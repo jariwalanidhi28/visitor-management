@@ -2,6 +2,7 @@
   "name": "visitor-management-system",
   "version": "1.0.0",
   "description": "Complete Visitor & Employee Check-In & Check-Out Management System",
+  "license": "MIT",
   "scripts": {
     "build": "npm --prefix backend install --production=false && npm --prefix admin-web install --production=false && npm --prefix admin-web run build",
     "start": "node backend/server.js",
