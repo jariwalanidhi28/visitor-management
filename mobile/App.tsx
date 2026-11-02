@@ -16,6 +16,12 @@ function MainNavigator() {
   const { user, loading } = useAuth();
   const [currentScreen, setCurrentScreen] = useState<Screen>("dashboard");
 
+  // Whenever the user state changes (e.g. logging in, logging out, switching users),
+  // always reset to the dashboard screen so new logins don't stay on the profile/signout screen.
+  React.useEffect(() => {
+    setCurrentScreen("dashboard");
+  }, [user?._id]);
+
   if (loading) {
     return (
       <View style={styles.splashContainer}>

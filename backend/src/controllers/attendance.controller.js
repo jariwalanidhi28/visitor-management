@@ -86,14 +86,14 @@ exports.checkIn = async (req, res, next) => {
     let finalAddress = address ? address.trim() : "";
     let trackingMetadata = {};
 
-    // 1. Resolve high-fidelity readable area name via Geocoding (Nominatim / Google Maps)
+    // 1. Resolve readable area name via Geocoding if mobile device did not supply one
     try {
       const geoResult = await geocodingService.reverseGeocode(
         parseFloat(latitude),
         parseFloat(longitude),
         finalAddress
       );
-      if (geoResult?.address) {
+      if (!finalAddress && geoResult?.address) {
         finalAddress = geoResult.address;
       }
       trackingMetadata.geocodingEngine = geoResult?.provider || "nominatim";
@@ -215,14 +215,14 @@ exports.checkOut = async (req, res, next) => {
 
     let finalAddress = address ? address.trim() : "";
 
-    // 1. Resolve high-fidelity departure area name via Geocoding (Nominatim / Google Maps)
+    // 1. Resolve readable departure area name via Geocoding if mobile device did not supply one
     try {
       const geoResult = await geocodingService.reverseGeocode(
         parseFloat(latitude),
         parseFloat(longitude),
         finalAddress
       );
-      if (geoResult?.address) {
+      if (!finalAddress && geoResult?.address) {
         finalAddress = geoResult.address;
       }
       activeAttendance.trackingMetadata = {
