@@ -114,7 +114,7 @@ export const HistoryScreen: React.FC<HistoryScreenProps> = ({ onBack }) => {
         <View style={styles.eventRow}>
           <View style={styles.eventBlock}>
             <View style={styles.eventTitleRow}>
-              <Ionicons name="log-in-outline" size={14" color="#2563EB" />
+              <Ionicons name="log-in-outline" size={14} color="#2563EB" />
               <Text style={styles.eventTitle}>Check-In</Text>
             </View>
             <View style={styles.eventDetailsRow}>
