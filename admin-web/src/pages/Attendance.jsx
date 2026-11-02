@@ -15,6 +15,34 @@ import {
 } from "lucide-react";
 import AttendanceDetailModal from "../components/AttendanceDetailModal";
 
+function PhotoThumbnail({ photoUrl, label, onOpenModal }) {
+  if (!photoUrl) return null;
+  const token = localStorage.getItem("admin_token") || "";
+  const photoSrc = `${API_BASE_URL}/photos/${photoUrl}${token ? `?token=${encodeURIComponent(token)}` : ""}`;
+
+  return (
+    <button
+      type="button"
+      onClick={onOpenModal}
+      className="group relative block w-10 h-10 rounded-lg overflow-hidden border-2 border-white shadow-sm hover:ring-2 hover:ring-blue-500 transition shrink-0 bg-slate-100"
+      title={`View ${label} Photo`}
+    >
+      <img
+        src={photoSrc}
+        alt={label}
+        className="w-full h-full object-cover group-hover:scale-110 transition duration-200"
+        onError={(e) => {
+          e.target.style.display = "none";
+          if (e.target.nextSibling) e.target.nextSibling.style.display = "flex";
+        }}
+      />
+      <div className="hidden absolute inset-0 bg-slate-200 items-center justify-center">
+        <Camera className="w-4 h-4 text-slate-400" />
+      </div>
+    </button>
+  );
+}
+
 function LocationCell({ lat, lng, address }) {
   if (!lat && !lng && !address) {
     return <span className="text-slate-400 italic text-xs">—</span>;
@@ -267,36 +295,38 @@ export default function Attendance() {
 
                       {/* Check-In */}
                       <td className="px-5 py-4 align-top whitespace-nowrap">
-                        <div className="flex items-center gap-1.5">
-                          <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500 text-white shadow-sm">
-                            {cin?.timestamp
-                              ? new Date(cin.timestamp).toLocaleTimeString([], {
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                })
-                              : "N/A"}
-                          </span>
+                        <div className="flex items-start gap-2.5">
                           {cin?.photoUrl && (
-                            <button
-                              onClick={() => setSelectedRecordId(r._id)}
-                              title="View Check-In Photo"
-                              className="p-1.5 rounded-md bg-blue-500 hover:bg-blue-600 text-white transition shadow-sm"
-                            >
-                              <Camera className="w-3.5 h-3.5" />
-                            </button>
+                            <PhotoThumbnail
+                              photoUrl={cin.photoUrl}
+                              label="Check-In"
+                              onOpenModal={() => setSelectedRecordId(r._id)}
+                            />
                           )}
-                          {cin?.latitude && (
-                            <button
-                              onClick={() => setSelectedRecordId(r._id)}
-                              title="View Location on Map"
-                              className="p-1.5 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm"
-                            >
-                              <MapPin className="w-3.5 h-3.5" />
-                            </button>
-                          )}
-                        </div>
-                        <div className="text-[11px] text-slate-400 font-medium mt-1">
-                          {cin?.timestamp ? new Date(cin.timestamp).toLocaleDateString() : ""}
+                          <div>
+                            <div className="flex items-center gap-1.5">
+                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-500 text-white shadow-sm">
+                                {cin?.timestamp
+                                  ? new Date(cin.timestamp).toLocaleTimeString([], {
+                                      hour: "2-digit",
+                                      minute: "2-digit",
+                                    })
+                                  : "N/A"}
+                              </span>
+                              {cin?.latitude && (
+                                <button
+                                  onClick={() => setSelectedRecordId(r._id)}
+                                  title="View Location on Map"
+                                  className="p-1.5 rounded-md bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm"
+                                >
+                                  <MapPin className="w-3.5 h-3.5" />
+                                </button>
+                              )}
+                            </div>
+                            <div className="text-[11px] text-slate-400 font-medium mt-1">
+                              {cin?.timestamp ? new Date(cin.timestamp).toLocaleDateString() : ""}
+                            </div>
+                          </div>
                         </div>
                       </td>
 
@@ -312,37 +342,37 @@ export default function Attendance() {
                       {/* Check-Out */}
                       <td className="px-5 py-4 align-top whitespace-nowrap">
                         {cout?.timestamp ? (
-                          <>
-                            <div className="flex items-center gap-1.5">
-                              <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm">
-                                {new Date(cout.timestamp).toLocaleTimeString([], {
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                })}
-                              </span>
-                              {cout?.photoUrl && (
-                                <button
-                                  onClick={() => setSelectedRecordId(r._id)}
-                                  title="View Check-Out Photo"
-                                  className="p-1.5 rounded-md bg-blue-500 hover:bg-blue-600 text-white transition shadow-sm"
-                                >
-                                  <Camera className="w-3.5 h-3.5" />
-                                </button>
-                              )}
-                              {cout?.latitude && (
-                                <button
-                                  onClick={() => setSelectedRecordId(r._id)}
-                                  title="View Location on Map"
-                                  className="p-1.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm"
-                                >
-                                  <MapPin className="w-3.5 h-3.5" />
-                                </button>
-                              )}
+                          <div className="flex items-start gap-2.5">
+                            {cout?.photoUrl && (
+                              <PhotoThumbnail
+                                photoUrl={cout.photoUrl}
+                                label="Check-Out"
+                                onOpenModal={() => setSelectedRecordId(r._id)}
+                              />
+                            )}
+                            <div>
+                              <div className="flex items-center gap-1.5">
+                                <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-blue-600 text-white shadow-sm">
+                                  {new Date(cout.timestamp).toLocaleTimeString([], {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                  })}
+                                </span>
+                                {cout?.latitude && (
+                                  <button
+                                    onClick={() => setSelectedRecordId(r._id)}
+                                    title="View Location on Map"
+                                    className="p-1.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm"
+                                  >
+                                    <MapPin className="w-3.5 h-3.5" />
+                                  </button>
+                                )}
+                              </div>
+                              <div className="text-[11px] text-slate-400 font-medium mt-1">
+                                {new Date(cout.timestamp).toLocaleDateString()}
+                              </div>
                             </div>
-                            <div className="text-[11px] text-slate-400 font-medium mt-1">
-                              {new Date(cout.timestamp).toLocaleDateString()}
-                            </div>
-                          </>
+                          </div>
                         ) : (
                           <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
                             Pending
