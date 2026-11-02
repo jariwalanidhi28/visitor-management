@@ -26,14 +26,9 @@ exports.getAdminSettings = async (req, res, next) => {
   try {
     const settings = await SystemSettings.getSettings();
 
-    // Mask secret keys for safe display
-    const maskedHyperTrackSecret = settings.hypertrack?.secretKey
-      ? settings.hypertrack.secretKey.slice(0, 4) + "••••••••" + settings.hypertrack.secretKey.slice(-4)
-      : "";
-
-    const maskedGoogleApiKey = settings.geocoding?.apiKey
-      ? settings.geocoding.apiKey.slice(0, 5) + "••••••••" + settings.geocoding.apiKey.slice(-4)
-      : "";
+    // Return actual key or unmasked if configured
+    const displayHyperTrackSecret = settings.hypertrack?.secretKey || "";
+    const displayGoogleApiKey = settings.geocoding?.apiKey || process.env.GOOGLE_MAPS_API_KEY || "";
 
     res.status(200).json({
       success: true,
@@ -42,12 +37,12 @@ exports.getAdminSettings = async (req, res, next) => {
         hypertrack: {
           publishableKey: settings.hypertrack?.publishableKey || "",
           accountId: settings.hypertrack?.accountId || "",
-          secretKeyMasked: maskedHyperTrackSecret,
+          secretKeyMasked: displayHyperTrackSecret,
           hasSecretKey: Boolean(settings.hypertrack?.secretKey),
         },
         geocoding: {
-          apiKeyMasked: maskedGoogleApiKey,
-          hasApiKey: Boolean(settings.geocoding?.apiKey),
+          apiKeyMasked: displayGoogleApiKey,
+          hasApiKey: Boolean(settings.geocoding?.apiKey || process.env.GOOGLE_MAPS_API_KEY),
           provider: settings.geocoding?.provider || "google",
         },
         updatedAt: settings.updatedAt,

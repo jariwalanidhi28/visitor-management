@@ -79,6 +79,7 @@ app.use("/api/destinations", destinationRoutes);
 app.use("/api/attendance", attendanceRoutes);
 app.use("/api/admin/attendance", adminAttendanceRoutes);
 app.use("/api/photos", photoRoutes);
+app.use("/photos", photoRoutes);
 app.use("/api/settings", settingsRoutes);
 
 // Serve Admin Web Frontend (React + Vite build)

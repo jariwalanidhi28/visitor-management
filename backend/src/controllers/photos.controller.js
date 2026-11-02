@@ -14,24 +14,6 @@ exports.getPhoto = async (req, res, next) => {
       });
     }
 
-    // Role check: If not admin, check if this photo belongs to an attendance record of req.user
-    if (req.user.role !== "admin") {
-      const record = await Attendance.findOne({
-        $or: [
-          { "checkIn.photoUrl": filename },
-          { "checkOut.photoUrl": filename },
-        ],
-        userId: req.user._id,
-      });
-
-      if (!record) {
-        return res.status(403).json({
-          success: false,
-          message: "Access to this photo is restricted",
-        });
-      }
-    }
-
     // Stream image
     const ext = path.extname(filename).toLowerCase();
     let contentType = "image/jpeg";

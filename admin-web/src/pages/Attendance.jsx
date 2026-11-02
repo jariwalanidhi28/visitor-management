@@ -63,19 +63,6 @@ function LocationCell({ lat, lng, address }) {
           {address || (lat && lng ? `${lat.toFixed(5)}, ${lng.toFixed(5)}` : "—")}
         </span>
       </div>
-      {lat && lng && (
-        <div className="pt-1">
-          <a
-            href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 hover:text-blue-700 hover:underline"
-          >
-            <ExternalLink className="w-3 h-3" />
-            <span>Open in Google Maps</span>
-          </a>
-        </div>
-      )}
     </div>
   );
 }
@@ -259,7 +246,6 @@ export default function Attendance() {
                 <th className="px-5 py-3.5">Checkout Location</th>
                 <th className="px-5 py-3.5">Duration</th>
                 <th className="px-5 py-3.5">Status</th>
-                <th className="px-5 py-3.5 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -411,17 +397,6 @@ export default function Attendance() {
                         >
                           {r.status === "checked_out" ? "Checked Out" : "Checked In"}
                         </span>
-                      </td>
-
-                      {/* Action */}
-                      <td className="px-5 py-4 align-top text-right whitespace-nowrap">
-                        <button
-                          onClick={() => setSelectedRecordId(r._id)}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-blue-600 hover:text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg transition"
-                        >
-                          <span>View & Map</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </button>
                       </td>
                     </tr>
                   );

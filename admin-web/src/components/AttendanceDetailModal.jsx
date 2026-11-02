@@ -318,16 +318,6 @@ export default function AttendanceDetailModal({ recordId, onClose }) {
                         GPS Accuracy: ±{cin.accuracy}m
                       </div>
                     )}
-
-                    {cin?.latitude && cin?.longitude && (
-                      <button
-                        onClick={() => openInGoogleMaps(cin.latitude, cin.longitude)}
-                        className="w-full mt-2 py-2 px-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700 text-xs flex items-center justify-center gap-1.5 transition"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
-                        <span>View Check-In on Google Maps</span>
-                      </button>
-                    )}
                   </div>
                 </div>
 
@@ -399,16 +389,6 @@ export default function AttendanceDetailModal({ recordId, onClose }) {
                             GPS Accuracy: ±{cout.accuracy}m
                           </div>
                         )}
-
-                        {cout?.latitude && cout?.longitude && (
-                          <button
-                            onClick={() => openInGoogleMaps(cout.latitude, cout.longitude)}
-                            className="w-full mt-2 py-2 px-3 bg-white hover:bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700 text-xs flex items-center justify-center gap-1.5 transition"
-                          >
-                            <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
-                            <span>View Check-Out on Google Maps</span>
-                          </button>
-                        )}
                       </div>
                     </>
                   ) : (
@@ -430,7 +410,7 @@ export default function AttendanceDetailModal({ recordId, onClose }) {
                 <div className="px-5 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
                   <h4 className="font-bold text-slate-800 text-xs uppercase tracking-wider flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-blue-600" />
-                    <span>Captured Locations (OpenStreetMap)</span>
+                    <span>Live GPS Location</span>
                   </h4>
                   <div className="flex items-center gap-4 text-xs font-medium text-slate-600">
                     <span className="flex items-center gap-1.5">
