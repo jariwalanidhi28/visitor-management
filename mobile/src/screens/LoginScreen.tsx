@@ -148,69 +148,7 @@ export const LoginScreen: React.FC = () => {
             Public registration is disabled. Contact your supervisor or administrator if you require account setup.
           </Text>
         </View>
-
-        <TouchableOpacity
-          style={styles.serverInfoButton}
-          onPress={() => {
-            setServerInput(apiUrl);
-            setIsServerModalVisible(true);
-          }}
-        >
-          <Ionicons name="wifi-outline" size={13} color="#2563EB" />
-          <Text style={styles.serverInfoText}>
-            Server: {apiUrl}
-          </Text>
-          <Text style={styles.serverInfoChange}>Tap to Change</Text>
-        </TouchableOpacity>
       </ScrollView>
-
-      {/* Server IP Config Modal */}
-      <Modal
-        visible={isServerModalVisible}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setIsServerModalVisible(false)}
-      >
-        <View style={styles.modalBackdrop}>
-          <View style={styles.modalCard}>
-            <View style={styles.modalHeader}>
-              <Ionicons name="server" size={24} color="#2563EB" />
-              <Text style={styles.modalTitle}>Configure Backend Server</Text>
-            </View>
-            <Text style={styles.modalDesc}>
-              Change the server address whenever your Wi-Fi network changes:
-            </Text>
-            <TextInput
-              style={styles.modalInput}
-              value={serverInput}
-              onChangeText={setServerInput}
-              placeholder="http://10.79.110.138:5000/api"
-              autoCapitalize="none"
-              autoCorrect={false}
-            />
-            <View style={styles.modalButtons}>
-              <TouchableOpacity
-                style={styles.modalCancelBtn}
-                onPress={() => setIsServerModalVisible(false)}
-              >
-                <Text style={styles.modalCancelText}>Cancel</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.modalSaveBtn}
-                onPress={async () => {
-                  if (serverInput.trim()) {
-                    await updateApiUrl(serverInput.trim());
-                    setIsServerModalVisible(false);
-                    Alert.alert("Server Updated", `Backend set to:\n${serverInput.trim()}`);
-                  }
-                }}
-              >
-                <Text style={styles.modalSaveText}>Save & Connect</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </Modal>
     </KeyboardAvoidingView>
   );
 };

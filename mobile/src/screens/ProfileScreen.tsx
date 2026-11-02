@@ -129,28 +129,6 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({ onBack }) => {
         </Text>
       </View>
 
-      {/* System Telemetry & Diagnostic */}
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>System Endpoint</Text>
-        <Text style={styles.endpointText}>{apiUrl}</Text>
-
-        <TouchableOpacity
-          style={styles.testButton}
-          onPress={handleTestBackend}
-          disabled={testingHealth}
-        >
-          {testingHealth ? (
-            <ActivityIndicator size="small" color="#2563EB" />
-          ) : (
-            <Text style={styles.testButtonText}>Test Server Connectivity</Text>
-          )}
-        </TouchableOpacity>
-
-        {healthStatus && (
-          <Text style={styles.healthStatusText}>{healthStatus}</Text>
-        )}
-      </View>
-
       {/* Sign Out Button */}
       <TouchableOpacity style={styles.logoutButton} onPress={handleSignOut}>
         <Ionicons name="log-out-outline" size={20} color="#DC2626" />
